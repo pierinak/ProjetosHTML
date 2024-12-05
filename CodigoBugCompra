@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Consultorias</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide-icons@0.1.0/dist/lucide.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Dashboard Container -->
+  <div class="flex min-h-screen bg-gray-50" id="dashboard">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white p-6 shadow-lg">
+      <div class="flex items-center space-x-4 mb-8">
+        <img src="sebrae-logo.jpg" alt="SEBRAE" class="h-10" />
+      </div>
+
+      <div class="space-y-6">
+        <!-- Botões -->
+        <button onclick="switchScreen('consultancy')" class="w-full bg-green-100 text-green-800 p-4 rounded-xl shadow-sm hover:bg-green-200 transition duration-300">
+          <h3 class="font-medium">Consultorias</h3>
+          <p class="text-sm text-gray-600">4 disponíveis</p>
+        </button>
+        <button onclick="switchScreen('empretec')" class="w-full bg-yellow-100 text-yellow-800 p-4 rounded-xl shadow-sm hover:bg-yellow-200 transition duration-300">
+          <h3 class="font-medium">Empretec</h3>
+          <p class="text-sm text-gray-600">Progresso: 40% Concluído</p>
+        </button>
+        <button onclick="switchScreen('trilha-financas')" class="w-full bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+          <h3 class="font-medium">Trilha de Finanças</h3>
+          <p class="text-sm text-gray-600">Progresso: 80% Concluído</p>
+        </button>
+        <button onclick="switchScreen('meu-assessor')" class="w-full bg-purple-100 text-purple-800 p-4 rounded-xl shadow-sm hover:bg-purple-200 transition duration-300">
+          <h3 class="font-medium">Meu Assessor</h3>
+          <p class="text-sm text-gray-600">Perfis e informações</p>
+        </button>
+        <button onclick="switchScreen('panorama-geral')" class="w-full bg-gray-100 text-gray-800 p-4 rounded-xl shadow-sm hover:bg-gray-200 transition duration-300">
+          <h3 class="font-medium">Panorama Geral</h3>
+          <p class="text-sm text-gray-600">Informação pessoal</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6 space-y-6 overflow-y-auto">
+      <!-- Header -->
+      <header class="bg-white p-4 shadow-sm">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex items-center space-x-2">
+            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+              <img src="joaoPadoca.jpeg" alt="Profile" />
+            </div>
+            <div>
+              <h2 class="text-xl font-bold">PADOCA DO JOÃO</h2>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main id="main-content">
+
+        <!-- Tela Trilha de Finanças -->
+        <div id="trilha-financas" class="hidden space-y-4">
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-xl font-bold mb-4">Trilha de Finanças</h2>
+            <div class="flex items-center space-x-2 mb-2">
+              <div class="flex space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+              </div>
+              <p class="text-sm text-gray-600">4 de 5 estrelas</p>
+            </div>
+            <p class="text-sm text-gray-600">Progresso da Trilha de Finanças: 80% Concluído</p>
+          </div>
+        </div>
+
+       <!-- Tela de Consultorias -->
+        <div id="consultancy" class="hidden space-y-4">
+          <h2 class="text-xl font-bold">Consultorias Disponíveis</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <button onclick="openConsultancyDetails('Formação de preço - 12H', 432)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <h3 class="font-medium">Formação de preço - 12H</h3>
+              <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+            </button>
+            <button onclick="openConsultancyDetails('Fluxo de caixa - 15H', 540)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <h3 class="font-medium">Fluxo de caixa - 15H</h3>
+              <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+            </button>
+            <button onclick="openConsultancyDetails('Controle de estoque - 20H', 720)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <h3 class="font-medium">Controle de estoque - 20H</h3>
+              <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+            </button>
+            <button onclick="openConsultancyDetails('Planejamento financeiro - 20H', 720)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <h3 class="font-medium">Planejamento financeiro - 20H</h3>
+              <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Detalhes da Consultoria -->
+        <div id="consultancy-details" class="hidden space-y-4">
+          <h2 class="text-xl font-bold">Detalhes da Consultoria</h2>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <p class="text-lg font-medium">Consultoria Selecionada: <span id="selected-consultancy-name"></span></p>
+            <p class="text-lg font-medium">Preço: R$ <span id="selected-consultancy-price"></span></p>
+            <p class="text-sm text-gray-600 mt-4">Aqui estão mais informações sobre a consultoria selecionada. Detalhes adicionais podem ser exibidos nesta área.</p>
+            <button onclick="switchToResumoCompra()" class="bg-green-500 text-white p-4 rounded-xl shadow-sm hover:bg-green-600 transition duration-300 w-full mt-6">Comprar consultoria</button>
+            <button onclick="switchScreen('consultancy')" class="bg-blue-500 text-white p-4 rounded-xl shadow-sm hover:bg-blue-600 transition duration-300 w-full mt-2">Voltar</button>
+          </div>
+        </div>
+
+        <!-- Resumo de Compra -->
+        <div id="resumo-compra" class="hidden space-y-4">
+          <h2 class="text-xl font-bold">Resumo da Compra</h2>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <p class="text-lg font-medium">Consultoria Selecionada: <span id="consultancy-name"></span></p>
+            <p class="text-lg font-medium">Preço: R$ <span id="consultancy-price"></span></p>
+            <p class="text-lg font-medium">Status: Compra em andamento</p>
+            <p class="text-lg font-medium">Data da Compra: <span id="purchase-date"></span></p>
+            <p class="text-lg font-medium">O consultor entrará em contato em até 3 dias úteis</p>
+            <button onclick="finalizarCompra()" class="bg-green-500 text-white p-4 rounded-xl shadow-sm hover:bg-green-600 transition duration-300 w-full mt-6">Finalizar Compra</button>
+            <button onclick="switchScreen('consultancy')" class="bg-blue-500 text-white p-4 rounded-xl shadow-sm hover:bg-blue-600 transition duration-300 w-full mt-2">Voltar</button>
+          </div>
+        </div>
+
+        <!-- Resumo do Carrinho -->
+        <div id="resumo-carrinho" class="hidden space-y-4">
+          <h2 class="text-xl font-bold">Resumo do Carrinho</h2>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <p class="text-lg font-medium">Consultoria Selecionada: <span id="cart-consultancy-name"></span></p>
+            <p class="text-lg font-medium">Preço: R$ <span id="cart-consultancy-price"></span></p>
+            <div class="flex space-x-4 mt-4">
+              <button onclick="confirmarCompra()" class="bg-green-500 text-white p-4 rounded-xl shadow-sm hover:bg-green-600 transition duration-300 w-full">
+                Confirmar Compra
+              </button>
+              <button onclick="cancelarCompra()" class="bg-red-500 text-white p-4 rounded-xl shadow-sm hover:bg-red-600 transition duration-300 w-full">
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumo Final -->
+        <div id="resumo-compra-final" class="hidden space-y-4">
+          <h2 class="text-xl font-bold">Resumo da Compra</h2>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <p class="text-lg font-medium">Consultoria Selecionada: <span id="final-consultancy-name"></span></p>
+            <p class="text-lg font-medium">Preço: R$ <span id="final-consultancy-price"></span></p>
+            <p class="text-lg font-medium">Status: Compra em andamento</p>
+            <p class="text-lg font-medium">Data da Compra: <span id="final-purchase-date"></span></p>
+            <p class="text-lg font-medium">O consultor entrará em contato em até 3 dias úteis</p>
+            <button onclick="switchScreen('consultancy')" class="bg-blue-500 text-white p-4 rounded-xl shadow-sm hover:bg-blue-600 transition duration-300 w-full mt-6">
+              Voltar para Consultorias
+            </button>
+          </div>
+        </div>
+      <!-- Tela de Empretec -->
+      <div id="empretec" class="hidden space-y-4 p-6 bg-gray-50 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold text-blue-600">Empretec - Progresso</h2>
+        <p class="text-sm text-gray-600">
+          Acompanhe seu progresso no Empretec através da barra de progresso abaixo.
+        </p>
+        
+        <!-- Barra de Progresso -->
+        <div class="mt-4">
+          <div class="relative w-full bg-gray-300 rounded-lg overflow-hidden shadow-md">
+            <div id="progress-bar" class="bg-blue-500 h-6 text-white flex items-center justify-center text-sm font-bold">
+              40%
+            </div>
+          </div>
+        </div>
+
+        <!-- Informações Extras -->
+        <div class="mt-4">
+          <a href="https://sebrae.com.br/sites/PortalSebrae/empretec" target="_blank">
+            <div class="p-6 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300 cursor-pointer">
+              <p class="text-lg font-bold">Clique aqui para aumentar a sua evolução</p>
+            </div>
+          </a>
+        </div>
+      </div>
+       <!-- Tela Meu Assessor -->
+       <div id="meu-assessor" class="hidden space-y-4">
+        <h2 class="text-2xl font-bold">Meu Assessor</h2>
+
+        <!-- Container Principal -->
+        <div class="grid grid-cols-3 gap-4">
+
+          <!-- Botão para Conversas no WhatsApp -->
+          <div class="bg-white p-6 rounded-xl shadow-lg col-span-1 flex flex-col items-center justify-between space-y-4">
+            <div class="flex items-center space-x-4">
+              <img src="image.png" alt="Consultor" class="w-16 h-16 rounded-full object-contain">
+              <div>
+                <h3 class="text-lg font-bold">Gilmar Rosseto</h3>
+                <p class="text-sm text-gray-600">Especialista Sebrae</p>
+              </div>
+            </div>
+            <p class="text-gray-700 text-center">
+              Gilmar possui mais de 10 anos de experiência em consultorias para pequenas empresas.
+            </p>
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 flex items-center space-x-2 w-full" id="whatsapp-button">
+              <img src="zap.png" alt="WhatsApp" class="h-6 w-6" />
+              <span>Conversar no WhatsApp</span>
+          </button>
+            <script>
+              // Lógica para abrir o WhatsApp
+              document.querySelector('#whatsapp-button').addEventListener('click', () => {
+                  window.open('https://wa.me/556733895330', '_blank'); // Insira o número correto do consultor
+              });
+          </script>
+          </div>
+
+          <!-- Tabela de Histórico -->
+          <div class="bg-white p-6 rounded-xl shadow-lg col-span-1">
+            <h3 class="text-lg font-bold mb-4">Histórico</h3>
+            <table class="w-full text-sm text-left text-gray-600">
+              <thead>
+                <tr class="text-gray-800 border-b">
+                  <th class="py-2 px-4">Data</th>
+                  <th class="py-2 px-4">Ação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-2 px-4">28/11/2024</td>
+                  <td class="py-2 px-4">Reunião inicial</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4">15/11/2024</td>
+                  <td class="py-2 px-4">Envio de relatório</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4">08/11/2024</td>
+                  <td class="py-2 px-4">Feedback financeiro</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Tabela de Agenda -->
+          <div class="bg-white p-6 rounded-xl shadow-lg col-span-1">
+            <h3 class="text-lg font-bold mb-4">Agenda</h3>
+            <table class="w-full text-sm text-left text-gray-600">
+              <thead>
+                <tr class="text-gray-800 border-b">
+                  <th class="py-2 px-4">Data</th>
+                  <th class="py-2 px-4">Horário</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-2 px-4">30/11/2024</td>
+                  <td class="py-2 px-4">14:00 - 15:00</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4">01/12/2024</td>
+                  <td class="py-2 px-4">09:00 - 10:00</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4">03/12/2024</td>
+                  <td class="py-2 px-4">16:00 - 17:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tabela de Tarefas Pendentes -->
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+          <h3 class="text-lg font-bold mb-4">Tarefas Pendentes</h3>
+          <ul class="list-disc pl-5 space-y-2 text-gray-600">
+            <li>Revisar plano de negócios enviado.</li>
+            <li>Atualizar projeções financeiras.</li>
+            <li>Preparar apresentação para reunião do dia 30/11/2024.</li>
+          </ul>
+        </div>
+      </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+<script>
+      // Adicionando "meu-assessor" à lista de telas possíveis no JavaScript
+      function switchScreen(screenId) {
+      const screens = [
+        'consultancy',
+        'empretec',
+        'trilha-financas',
+        'meu-assessor', // Adicionado
+        'resumo-compra',
+        'resumo-carrinho',
+        'resumo-compra-final'
+      ];
+
+      // Ocultar todas as telas
+      screens.forEach(screen => {
+        const element = document.getElementById(screen);
+        if (element) {
+          element.classList.add('hidden');
+        }
+      });
+
+      // Mostrar a tela selecionada
+      const target = document.getElementById(screenId);
+      if (target) {
+        target.classList.remove('hidden');
+      }
+    }
+
+  // Função para abrir os detalhes de uma consultoria
+  function openConsultancyDetails(consultancyName, price) {
+    // Atualiza as informações no resumo do carrinho
+    document.getElementById('cart-consultancy-name').innerText = consultancyName;
+    document.getElementById('cart-consultancy-price').innerText = price.toFixed(2);
+
+    // Abre a aba de resumo do carrinho
+    switchScreen('resumo-carrinho');
+  }
+    // Função para voltar à aba anterior
+    function goBack(previousScreenId) {
+      switchScreen(previousScreenId);
+    }
+
+    function confirmarCompra() {
+      // Preenche o resumo final da compra
+      const now = new Date();
+      document.getElementById('final-consultancy-name').innerText = document.getElementById('cart-consultancy-name').innerText;
+      document.getElementById('final-consultancy-price').innerText = document.getElementById('cart-consultancy-price').innerText;
+      document.getElementById('final-purchase-date').innerText = now.toLocaleDateString().classList.add('hidden');
+
+      // Oculta outras abas relacionadas
+      document.getElementById('resumo-carrinho').classList.add('hidden');
+      document.getElementById('resumo-compra').classList.add('hidden'); 
+
+      // Mostra o resumo final
+      switchScreen('resumo-compra-final');
+    }
+
+    function cancelarCompra() {
+      // Oculta abas relacionadas
+      document.getElementById('resumo-carrinho').classList.add('hidden');
+      document.getElementById('resumo-compra').classList.add('hidden'); 
+
+      // Retorna à tela de consultorias
+      switchScreen('consultancy');
+    }
+
+    function openConsultancyDetails(name, price) {
+      // Atualiza os detalhes da consultoria
+      document.getElementById('selected-consultancy-name').textContent = name;
+      document.getElementById('selected-consultancy-price').textContent = price.toFixed(2);
+      switchScreen('consultancy-details').classList.add('hidden');
+    }
+
+    function switchToResumoCompra() {
+      // Transfere dados para o resumo de compra
+      document.getElementById('consultancy-name').textContent = document.getElementById('selected-consultancy-name').textContent;
+      document.getElementById('consultancy-price').textContent = document.getElementById('selected-consultancy-price').textContent;
+      document.getElementById('purchase-date').textContent = new Date().toLocaleDateString();
+
+      // Apenas alterna para a tela correta
+      switchScreen('resumo-compra');
+    }
+
+    function finalizarCompra() {
+      // Finaliza a compra
+      alert('Compra finalizada com sucesso!');
+      switchScreen('consultancy');
+    }
+
+    function cancelarCompra() {
+      // Cancela a compra
+      alert('Compra cancelada.');
+      switchScreen('consultancy');
+    }
+
+    // Simula a atualização da barra de progresso
+    function updateProgressBar(progress) {
+      const progressBar = document.getElementById('progress-bar');
+      progressBar.style.width = progress + '%';
+      progressBar.textContent = progress + '%';
+    }
+
+    // Exemplo: Atualizando o progresso dinamicamente
+    setTimeout(() => updateProgressBar(60), 100); // Atualiza para 60% após 2 segundos
+    setTimeout(() => updateProgressBar(80), 4000); // Atualiza para 80% após 4 segundos
+    setTimeout(() => updateProgressBar(100), 6000); // Atualiza para 100% após 6 segundos
+</script>
+
+
+
+
