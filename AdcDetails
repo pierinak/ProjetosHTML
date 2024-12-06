@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Consultorias</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide-icons@0.1.0/dist/lucide.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Dashboard Container -->
+  <div class="flex min-h-screen bg-gray-50" id="dashboard">
+    <div class="w-72 bg-white p-8 shadow-xl">
+      <div class="flex flex-col items-center space-y-6 mb-12">
+        <div class="w-24 h-24 bg-gray-200 rounded-full overflow-hidden shadow-md border-4 border-gray-100">
+          <img src="SebraeOn.jpeg" alt="SEBRAE" class="w-full h-full object-contain" />
+        </div>
+      </div>
+      <div class="space-y-6">
+        <!-- Botões -->
+        <button onclick="switchScreen('consultancy')" class="w-full bg-gray-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-gray-200 transition duration-300">
+          <h3 class="font-medium">Consultorias</h3>
+          <p class="text-sm text-gray-600">4 disponíveis</p>
+        </button>
+        <button onclick="switchScreen('empretec')" class="w-full bg-gray-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-gray-200 transition duration-300">
+          <h3 class="font-medium">Empretec</h3>
+          <p class="text-sm text-gray-600">Meu objetivo: Empretec</p>
+        </button>
+        <button onclick="switchScreen('trilha-financas')" class="w-full bg-gray-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-gray-200 transition duration-300">
+          <h3 class="font-medium">Trilha de Finanças</h3>
+          <p class="text-sm text-gray-600">Progresso: 80% Concluído</p>
+        </button>
+        <button onclick="switchScreen('meu-assessor')" class="w-full bg-gray-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-gray-200 transition duration-300">
+          <h3 class="font-medium">Meu Assessor</h3>
+          <p class="text-sm text-gray-600">Perfis e informações</p>
+        </button>
+        <button onclick="switchScreen('panorama-geral')" class="w-full bg-gray-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-gray-200 transition duration-300">
+          <h3 class="font-medium">Panorama Geral</h3>
+          <p class="text-sm text-gray-600">Informação pessoal</p>
+        </button>
+        <button onclick="switchScreen('oportunidades')" class="w-full bg-gray-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-gray-200 transition duration-300">
+          <h3 class="font-medium">Oportunidades</h3>
+          <p class="text-sm text-gray-600">Descubra a inovação aqui</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1 p-6 space-y-6 overflow-y-auto">
+      <!-- Header -->
+      <header class="bg-white p-6 shadow-md rounded-lg">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center space-x-4">
+            <div class="w-20 h-20 bg-gray-200 overflow-hidden shadow-lg border-4 border-gray-100">
+              <img src="Joao.jpeg" alt="Profile" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <p class="text-lg text-gray-600">João Alvarenga</p>
+              <h1 class="text-3xl font-extrabold text-gray-800">PADOCA DO JOÃO</h1>
+            </div>
+          </div>
+          <div class="text-xl font-bold text-green-500 flex items-center justify-between">
+            <div>
+              <p class="text-lg text-gray-600">Cashback</p>
+              <span>50,00 R$</span>
+            </div>
+            <!-- Moeda de ouro -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <!-- Círculo da moeda de ouro com um tom mais escuro -->
+              <circle cx="12" cy="12" r="10" fill="darkgoldenrod" stroke="goldenrod" stroke-width="2" />
+              <!-- Círculo mais claro para o brilho da moeda -->
+              <circle cx="12" cy="12" r="9" fill="lightgoldenrodyellow" stroke="gold" stroke-width="2" />
+              <!-- Símbolo de Dólar dentro da moeda -->
+              <text x="12" y="16" text-anchor="middle" font-size="12" fill="white" font-weight="bold">$</text>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main id="main-content">
+        <!-- Sidebar Oportunidades -->
+        <div id="oportunidades" class="bg-gradient-to-r from-blue-100 via-white to-blue-50 p-6 rounded-xl shadow-xl">
+          <h2 class="text-2xl font-bold mb-6 text-blue-600">Oportunidades</h2>
+          <ul class="space-y-4">
+            <!-- Item 1 -->
+            <a href="https://www.youtube.com/watch?v=UqftWhnMCTA&t=6s" target="_blank">
+              <li class="flex justify-between items-center bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow mb-4">
+                <div class="flex items-center space-x-2">
+                  <!-- Ícone de seta à frente do título -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path>
+                  </svg>
+                  <h3 class="text-lg font-semibold text-gray-800">Espaço de Expositores EmpreendeFest</h3>
+                </div>
+              </li>
+            </a>
+            <!-- Item 2 -->
+            <a href="https://mkt.sebrae.ms/missoes-empresariais-2024#FIPAN" target="_blank">
+              <li class="flex justify-between items-center bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow mb-4">
+                <div class="flex items-center space-x-2">
+                  <!-- Ícone de seta à frente do título -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path>
+                  </svg>
+                  <h3 class="text-lg font-semibold text-gray-800">Feira Fipan</h3>
+                </div>
+              </li>
+            </a>
+            <!-- Item 3 -->
+            <a href="https://sebrae.com.br/sites/PortalSebrae/agentelocaldeinovacao" target="_blank">
+              <li class="flex justify-between items-center bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow mb-4">
+                <div class="flex items-center space-x-2">
+                  <!-- Ícone de seta à frente do título -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path>
+                  </svg>
+                  <h3 class="text-lg font-semibold text-gray-800">Ciclo ALI Transformação Digital 2024/25</h3>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+
+        <!-- Tela Trilha de Finanças -->
+        <div id="trilha-financas" class="hidden space-y-4">
+        
+          <div class="bg-gradient-to-r from-blue-100 via-white to-blue-50 p-6 rounded-xl shadow-xl">
+            <h2 class="text-xl font-bold mb-4">Trilha de Finanças</h2>
+            <div class="flex items-center space-x-2 mb-2">
+              <div class="flex space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                </svg>
+              </div>
+              <p class="text-sm text-gray-600">4 de 5 estrelas</p>
+            </div>
+            <p class="text-sm text-gray-600">Progresso da Trilha de Finanças: 80% Concluído</p>
+          </div>
+        </div>
+
+        <!-- Tela de Consultorias -->
+        
+        <div id="consultancy-container">
+          <!-- Consultorias Disponíveis -->
+          <div id="consultancy" class="space-y-4">
+            <h2 class="text-xl font-bold">Consultorias Disponíveis</h2>
+            <div class="grid grid-cols-2 gap-4">
+              <button onclick="openConsultancyDetails('Formação de preço - 12H', 432)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+                <h3 class="font-medium">Formação de preço - 12H</h3>
+                <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+              </button>
+              <button onclick="openConsultancyDetails('Fluxo de caixa - 15H', 540)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+                <h3 class="font-medium">Fluxo de caixa - 15H</h3>
+                <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+              </button>
+              <button onclick="openConsultancyDetails('Controle de estoque - 20H', 720)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+                <h3 class="font-medium">Controle de estoque - 20H</h3>
+                <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+              </button>
+              <button onclick="openConsultancyDetails('Planejamento financeiro - 20H', 720)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+                <h3 class="font-medium">Planejamento financeiro - 20H</h3>
+                <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
+              </button>
+            </div>
+          </div>
+        
+          <!-- Detalhes da Consultoria -->
+          <div id="consultancy-details" class="hidden space-y-4">
+            <h2 class="text-xl font-bold">Detalhes da Consultoria</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <p class="text-lg font-medium">Consultoria Selecionada: <span id="selected-consultancy-name"></span></p>
+              <p class="text-lg font-medium">Preço: R$ <span id="selected-consultancy-price"></span></p>
+              <p class="text-sm text-gray-600 mt-4">Aqui estão mais informações sobre a consultoria selecionada. Detalhes adicionais podem ser exibidos nesta área.</p>
+              <button onclick="buyConsultancy()" class="bg-green-500 text-white p-4 rounded-xl shadow-sm hover:bg-green-600 transition duration-300 w-full mt-6">Comprar Consultoria</button>
+              <button onclick="switchScreen('consultancy')" class="bg-blue-500 text-white p-4 rounded-xl shadow-sm hover:bg-blue-600 transition duration-300 w-full mt-2">Voltar</button>
+            </div>
+          </div>
+        
+          <!-- Aba de Confirmação de Compra -->
+          <div id="consultancy-purchase" class="hidden space-y-4">
+            <h2 class="text-xl font-bold">Confirmação de Compra</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <p class="text-lg font-medium">Você comprou a consultoria: <span id="purchase-consultancy-name"></span></p>
+              <p class="text-lg font-medium">Preço: R$ <span id="purchase-consultancy-price"></span></p>
+              <p class="text-sm text-gray-600 mt-4">Agradecemos pela compra! Em breve, entraremos em contato para agendar a consultoria.</p>
+              <button onclick="switchScreen('consultancy')" class="bg-blue-500 text-white p-4 rounded-xl shadow-sm hover:bg-blue-600 transition duration-300 w-full mt-6">Voltar</button>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          function openConsultancyDetails(name, price) {
+            document.getElementById('consultancy').classList.add('hidden');
+            document.getElementById('consultancy-details').classList.remove('hidden');
+            document.getElementById('selected-consultancy-name').textContent = name;
+            document.getElementById('selected-consultancy-price').textContent = price;
+          }
+        
+          function switchScreen(screenId) {
+            document.getElementById('consultancy').classList.add('hidden');
+            document.getElementById('consultancy-details').classList.add('hidden');
+            document.getElementById('consultancy-purchase').classList.add('hidden');
+            
+            document.getElementById(screenId).classList.remove('hidden');
+          }
+        
+          function buyConsultancy() {
+            const name = document.getElementById('selected-consultancy-name').textContent;
+            const price = document.getElementById('selected-consultancy-price').textContent;
+        
+            document.getElementById('purchase-consultancy-name').textContent = name;
+            document.getElementById('purchase-consultancy-price').textContent = price;
+        
+            document.getElementById('consultancy-details').classList.add('hidden');
+            document.getElementById('consultancy-purchase').classList.remove('hidden');
+          }
+        </script>
+        
+        <!-- Tela de Empretec -->
+        <div id="empretec" class="hidden space-y-4 p-6 bg-gradient-to-r from-blue-100 via-white to-blue-50 rounded-xl shadow-xl">
+          <h2 class="text-xl font-bold text-blue-600">Meus objetivos</h2>
+
+
+          <!-- Imagem posicionada acima do círculo -->
+          <div class="flex justify-center mt-4 mb-6"> <!-- Espaço ajustado entre imagem e o círculo -->
+            <img src="empretec.png" alt="Imagem Empretec" class="w-500 h-500"> <!-- Ajuste conforme o tamanho desejado -->
+          </div>
+
+          <!-- Barra de Progresso Circular -->
+          <div class="flex flex-col justify-center items-center space-y-4"> <!-- Centraliza o conteúdo com mais espaço entre os elementos -->
+            <!-- Barra de Progresso Circular -->
+            <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <!-- Círculo de fundo -->
+              <circle cx="60" cy="60" r="54" stroke="#e0e0e0" stroke-width="12" fill="none"></circle>
+              
+              <!-- Círculo de progresso -->
+              <circle cx="60" cy="60" r="54" stroke="#4c8bf5" stroke-width="12" fill="none" stroke-dasharray="339.292" stroke-dashoffset="203.575"></circle> <!-- 40% -->
+              
+              <!-- Número no centro -->
+              <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="30" fill="#4c8bf5">40%</text>
+            </svg>
+          
+            <!-- Botão de mensagem -->
+            <div class="p-4 bg-blue-500 text-white rounded-lg shadow-sm hover">
+              <p class="text-sm font-semibold">Faltam 75 pontos para atingir o seu objetivo!</p>
+            </div>
+          </div>         
+
+          <!-- Informações Extras -->
+          <div class="mt-4">
+            <a href="https://loja.ms.sebrae.com.br/cursos-eventos" target="_blank">
+              <div class="p-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300 cursor-pointer">
+                <p class="text-lg font-bold">Aumente já ! </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+        <!-- Tela Meu Assessor -->
+        <div id="meu-assessor" class="hidden space-y-4 bg-gradient-to-r from-blue-100 via-white to-blue-50 p-6 rounded-xl shadow-xl">
+          <h2 class="text-2xl font-bold">Meu Assessor</h2>
+
+          <!-- Container Principal -->
+          <div class="grid grid-cols-3 gap-4">
+            
+            <!-- Botão para Conversas no WhatsApp -->
+            <div class="bg-white p-6 rounded-xl shadow-lg col-span-1 flex flex-col items-center justify-between space-y-4">
+              <div class="flex items-center space-x-4">
+                <img src="consultor.png" alt="Consultor" class="w-16 h-16 rounded-full object-contain">
+                <div>
+                  <h3 class="text-lg font-bold">Gilmar Rosseto</h3>
+                  <p class="text-sm text-gray-600">Especialista Sebrae</p>
+                </div>
+              </div>
+              <p class="text-gray-700 text-center">
+                Gilmar possui mais de 10 anos de experiência em consultorias para pequenas empresas.
+              </p>
+              <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 flex items-center space-x-2 w-full" id="whatsapp-button">
+                <img src="zap.png" alt="WhatsApp" class="h-6 w-6" />
+                <span>Conversar no WhatsApp</span>
+              </button>
+              <script>
+                // Lógica para abrir o WhatsApp
+                document.querySelector('#whatsapp-button').addEventListener('click', () => {
+                  window.open('https://wa.me/55673389-5330', '_blank'); // Insira o número correto do consultor
+                });
+              </script>
+            </div>
+
+            <!-- Tabela de Histórico -->
+            <div class="bg-white p-6 rounded-xl shadow-lg col-span-1">
+              <h3 class="text-lg font-bold mb-4">Histórico</h3>
+              <table class="w-full text-sm text-left text-gray-600">
+                <thead>
+                  <tr class="text-gray-800 border-b">
+                    <th class="py-2 px-4">Data</th>
+                    <th class="py-2 px-4">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 px-4">28/11/2024</td>
+                    <td class="py-2 px-4">Reunião inicial</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4">15/11/2024</td>
+                    <td class="py-2 px-4">Envio de relatório</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4">08/11/2024</td>
+                    <td class="py-2 px-4">Feedback financeiro</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Tabela de Agenda -->
+            <div class="bg-white p-6 rounded-xl shadow-lg col-span-1">
+              <h3 class="text-lg font-bold mb-4">Agenda</h3>
+              <table class="w-full text-sm text-left text-gray-600">
+                <thead>
+                  <tr class="text-gray-800 border-b">
+                    <th class="py-2 px-4">Data</th>
+                    <th class="py-2 px-4">Horário</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 px-4">30/11/2024</td>
+                    <td class="py-2 px-4">14:00 - 15:00</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4">01/12/2024</td>
+                    <td class="py-2 px-4">09:00 - 10:00</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4">03/12/2024</td>
+                    <td class="py-2 px-4">16:00 - 17:00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Tabela de Tarefas Pendentes -->
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+              <h3 class="text-lg font-bold mb-4">Tarefas Pendentes</h3>
+              <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                <li>Revisar plano de negócios enviado.</li>
+                <li>Atualizar projeções financeiras.</li>
+                <li>Preparar apresentação para reunião do dia 30/11/2024.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Panorama Geral -->
+        <div id="panorama-geral" class="hidden space-y-4">
+          <!-- Gráfico -->
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-xl font-bold mb-4">Panorama Geral</h2>
+            <canvas id="chart" class="w-full h-40"></canvas>
+          </div>
+
+          <div class="mt-4">
+            <a href="https://diagnostico.sebrae.com.br/" target="_blank">
+              <div class="p-6 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300 cursor-pointer">
+                <p class="text-lg font-bold">Atualizar Diagnóstico</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-100 via-white to-blue-50 p-6 rounded-xl shadow-xl">
+            <h2 class="text-2xl font-bold mb-6 text-blue-600">Meu Desempenho</h2>
+            <ul class="space-y-4">
+              <!-- Item 1 -->
+              <li class="flex justify-between items-center bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800">Trilha Finanças</h3>
+                  <p class="text-sm text-gray-500">Explore estratégias financeiras para alavancar o seu negócio.</p>
+                </div>
+                <div class="flex space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                </div>
+              </li>
+
+              <!-- Item 2 -->
+              <li class="flex justify-between items-center bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800">Trilha Marketing Digital</h3>
+                  <p class="text-sm text-gray-500">Aprenda a criar campanhas e estratégias para redes sociais.</p>
+                </div>
+                <div class="flex space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 15l-3.5 2.3 1-4.3-3.3-2.7 4.4-.4L10 6l1.7 4.5 4.4.4-3.3 2.7 1 4.3z" />
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <!-- Adicionando espaçamento -->
+            <div style="height: 20px;"></div> <!-- Espaçamento entre as seções -->
+            <!-- RANKING -->
+            <div>
+              <h2 class="text-2xl font-bold mb-6 text-blue-600">Desafio da Semana</h2>
+              <ul class="space-y-4">
+                <!-- Item 1 -->
+                <li class="flex justify-between items-center bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <div>
+                    <h3 class="text-lg font-semibold text-gray-800">Faça 5 cursos de finanças</h3>
+                    <p class="text-sm text-gray-500">Um jeito simples de desenvolver suas habilidades.</p>
+                  </div>
+                  <!-- Medalha -->
+                  <div class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14a6 6 0 016 6c0 3.31-2.69 6-6 6S6 13.31 6 10a6 6 0 016-6zm0 10c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>
+                      <path d="M12 18l2 4h-4l2-4z"/>
+                    </svg>                         
+                    <span class="text-yellow-500 font-semibold">Medalha de Ouro</span>
+                  </div>
+                  <!-- Quadradinhos -->
+                  <div class="flex space-x-2">
+                    <!-- Quadrados preenchidos -->
+                    <div class="w-8 h-6 bg-yellow-500 rounded-md"></div>
+                    <div class="w-8 h-6 bg-yellow-500 rounded-md"></div>
+                    <div class="w-8 h-6 bg-yellow-500 rounded-md"></div>
+                    <div class="w-8 h-6 bg-yellow-500 rounded-md"></div>
+                    <!-- Quadrado vazio -->
+                    <div class="w-8 h-6 bg-gray-300 rounded-md"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+
+
+<script>
+  // Simula a atualização da barra de progresso
+  function updateProgressBar(progress) {
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = progress + '%';
+    progressBar.textContent = progress + '%';
+  }
+
+  // Exemplo: Atualizando o progresso dinamicamente
+  setTimeout(() => updateProgressBar(60), 100);  // Atualiza para 60% após 2 segundos
+  setTimeout(() => updateProgressBar(60), 4000); // Atualiza para 80% após 4 segundos
+  setTimeout(() => updateProgressBar(60), 6000); // Atualiza para 100% após 6 segundos
+
+  // Adicionando "meu-assessor" à lista de telas possíveis no JavaScript
+  function switchScreen(screenId) {
+    const screens = [
+      'consultancy',
+      'empretec',
+      'trilha-financas',
+      'meu-assessor', // Adicionado
+      'resumo-compra',
+      'resumo-carrinho',
+      'resumo-compra-final',
+      'panorama-geral',
+      'oportunidades',
+      'consultancy-purchase',
+      'consultancy-details'
+      
+      
+    ];
+
+    // Ocultar todas as telas
+    screens.forEach(screen => {
+      const element = document.getElementById(screen);
+      if (element) {
+        element.classList.add('hidden');
+      }
+    });
+
+    // Mostrar a tela selecionada
+    const target = document.getElementById(screenId);
+    if (target) {
+      target.classList.remove('hidden');
+    }
+  }
+
+
+  // Função para voltar à aba anterior
+  function goBack(previousScreenId) {
+      switchScreen(previousScreenId);
+  }
+    
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('chart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+      datasets: [{
+        label: 'Progresso (60%)',
+        data: [10, 40, 60], // Os valores da barra
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100, // Define o limite máximo do eixo Y como 100
+        }
+      }
+    }
+  });
+
+
+  // Função para exibir o "panorama-geral" ao carregar a página
+  document.addEventListener('DOMContentLoaded', () => {
+    switchScreen('panorama-geral');
+  });
+
+  
+
+
+</script>
