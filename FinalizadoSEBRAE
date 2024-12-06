@@ -159,19 +159,19 @@
           <div id="consultancy" class="space-y-4">
             <h2 class="text-xl font-bold">Consultorias Disponíveis</h2>
             <div class="grid grid-cols-2 gap-4">
-              <button onclick="openConsultancyDetails('Formação de preço - 12H', 432)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <button onclick="openConsultancyDetails('Formação de preço - 12H', 432, 'Esta consultoria ajuda a entender e definir estratégias para formação de preços competitivos, considerando os custos e o mercado alvo.')" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
                 <h3 class="font-medium">Formação de preço - 12H</h3>
                 <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
               </button>
-              <button onclick="openConsultancyDetails('Fluxo de caixa - 15H', 540)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <button onclick="openConsultancyDetails('Fluxo de caixa - 15H', 540, 'Ensina como gerenciar as finanças da empresa, controlando entradas e saídas, e garantindo a saúde financeira do negócio.')" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
                 <h3 class="font-medium">Fluxo de caixa - 15H</h3>
                 <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
               </button>
-              <button onclick="openConsultancyDetails('Controle de estoque - 20H', 720)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <button onclick="openConsultancyDetails('Controle de estoque - 20H', 720, 'A consultoria é voltada para otimizar a gestão de estoque, evitando excessos ou faltas de produtos, e melhorando a logística interna.')" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
                 <h3 class="font-medium">Controle de estoque - 20H</h3>
                 <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
               </button>
-              <button onclick="openConsultancyDetails('Planejamento financeiro - 20H', 720)" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
+              <button onclick="openConsultancyDetails('Planejamento financeiro - 20H', 720, 'Esta consultoria foca em planejar as finanças da empresa para o futuro, visando o crescimento e a sustentabilidade financeira a longo prazo.')" class="bg-blue-100 text-blue-800 p-4 rounded-xl shadow-sm hover:bg-blue-200 transition duration-300">
                 <h3 class="font-medium">Planejamento financeiro - 20H</h3>
                 <p class="text-sm text-gray-600">Detalhes da consultoria.</p>
               </button>
@@ -184,7 +184,7 @@
             <div class="bg-white p-6 rounded-xl shadow-lg">
               <p class="text-lg font-medium">Consultoria Selecionada: <span id="selected-consultancy-name"></span></p>
               <p class="text-lg font-medium">Preço: R$ <span id="selected-consultancy-price"></span></p>
-              <p class="text-sm text-gray-600 mt-4">Aqui estão mais informações sobre a consultoria selecionada. Detalhes adicionais podem ser exibidos nesta área.</p>
+              <p class="text-sm text-gray-600 mt-4" id="consultancy-description"></p> <!-- Descrição específica da consultoria -->
               <button onclick="buyConsultancy()" class="bg-green-500 text-white p-4 rounded-xl shadow-sm hover:bg-green-600 transition duration-300 w-full mt-6">Comprar Consultoria</button>
               <button onclick="switchScreen('consultancy')" class="bg-blue-500 text-white p-4 rounded-xl shadow-sm hover:bg-blue-600 transition duration-300 w-full mt-2">Voltar</button>
             </div>
@@ -196,18 +196,19 @@
             <div class="bg-white p-6 rounded-xl shadow-lg">
               <p class="text-lg font-medium">Você comprou a consultoria: <span id="purchase-consultancy-name"></span></p>
               <p class="text-lg font-medium">Preço: R$ <span id="purchase-consultancy-price"></span></p>
-              <p class="text-sm text-gray-600 mt-4">Agradecemos pela compra! Em breve, entraremos em contato para agendar a consultoria.</p>
+              <p class="text-sm text-gray-600 mt-4">Agradecemos pela compra! O consultor entrará em contato em até 3 dias úteis.</p>
               <button onclick="switchScreen('consultancy')" class="bg-blue-500 text-white p-4 rounded-xl shadow-sm hover:bg-blue-600 transition duration-300 w-full mt-6">Voltar</button>
             </div>
           </div>
         </div>
         
         <script>
-          function openConsultancyDetails(name, price) {
+          function openConsultancyDetails(name, price, description) {
             document.getElementById('consultancy').classList.add('hidden');
             document.getElementById('consultancy-details').classList.remove('hidden');
             document.getElementById('selected-consultancy-name').textContent = name;
             document.getElementById('selected-consultancy-price').textContent = price;
+            document.getElementById('consultancy-description').textContent = description;  // Adicionando a descrição específica
           }
         
           function switchScreen(screenId) {
@@ -229,6 +230,7 @@
             document.getElementById('consultancy-purchase').classList.remove('hidden');
           }
         </script>
+        
         
         <!-- Tela de Empretec -->
         <div id="empretec" class="hidden space-y-4 p-6 bg-gradient-to-r from-blue-100 via-white to-blue-50 rounded-xl shadow-xl">
@@ -297,9 +299,9 @@
               <script>
                 // Lógica para abrir o WhatsApp
                 document.querySelector('#whatsapp-button').addEventListener('click', () => {
-                  window.open('https://wa.me/55673389-5330', '_blank'); // Insira o número correto do consultor
+                    window.open('https://wa.me/556733895330', '_blank'); // Insira o número correto do consultor
                 });
-              </script>
+            </script>
             </div>
 
             <!-- Tabela de Histórico -->
