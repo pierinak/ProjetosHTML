@@ -438,9 +438,9 @@
               </li>
             </ul>
             <!-- Adicionando espaçamento -->
-          <div style="height: 20px;"></div> <!-- Espaçamento entre as seções -->
+            <div style="height: 20px;"></div> <!-- Espaçamento entre as seções -->
             <!-- RANKING -->
-            <div class="bg-gradient-to-r from-blue-100 via-white to-blue-50 p-6 rounded-xl shadow-xl mb-6">
+            <div>
               <h2 class="text-2xl font-bold mb-6 text-blue-600">Desafio da Semana</h2>
               <ul class="space-y-4">
                 <!-- Item 1 -->
@@ -489,8 +489,8 @@
 
   // Exemplo: Atualizando o progresso dinamicamente
   setTimeout(() => updateProgressBar(60), 100);  // Atualiza para 60% após 2 segundos
-  setTimeout(() => updateProgressBar(80), 4000); // Atualiza para 80% após 4 segundos
-  setTimeout(() => updateProgressBar(100), 6000); // Atualiza para 100% após 6 segundos
+  setTimeout(() => updateProgressBar(60), 4000); // Atualiza para 80% após 4 segundos
+  setTimeout(() => updateProgressBar(60), 6000); // Atualiza para 100% após 6 segundos
 
   // Adicionando "meu-assessor" à lista de telas possíveis no JavaScript
   function switchScreen(screenId) {
