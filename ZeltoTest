@@ -1,41 +1,568 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My app</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Credit Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#059669',
+                        dark: '#064E3B',
+                        light: '#D1FAE5',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        height: 100dvh;
-        font-family: "Arial", sans-serif;
-        text-align: center;
-      }
-      .arrow {
-        position: absolute;
-        bottom: 32px;
-        left: 0px;
-        width: 100px;
-        transform: rotate(30deg);
-      }
-      h1 {
-        font-size: 50px;
-      }
-      h1 span {
-        color: #acacac;
-        font-size: 32px;
-      }
+        .gradient-bg {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
     </style>
-  </head>
-  <body>
-    <h1>
-      <span>I'm ready to work,</span><br />
-      Ask me anything.
-    </h1>
-    <img src="https://enzostvs-deepsite.hf.space/arrow.svg" class="arrow" />
-    <script></script>
-  </body>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-leaf text-3xl"></i>
+                    <h1 class="text-2xl font-bold">CarbonCredit</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#real-time" class="hover:underline">Dados em Tempo Real</a>
+                    <a href="#earn" class="hover:underline">Como Ganhar</a>
+                    <a href="#market" class="hover:underline">Mercado</a>
+                    <a href="#benefits" class="hover:underline">Benefícios</a>
+                    <a href="#start" class="hover:underline">Começar</a>
+                </nav>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="mt-12 text-center pb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Mercado de Créditos de Carbono</h2>
+                <p class="text-xl max-w-2xl mx-auto">Monitore, negocie e contribua para um futuro sustentável</p>
+                <button class="mt-8 bg-white text-primary font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition">
+                    Comece Agora
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Real-time Data Section -->
+    <section id="real-time" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Dados de Créditos de Carbono em Tempo Real</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Price Card -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-500">Preço Atual</p>
+                            <h3 class="text-3xl font-bold text-primary mt-2" id="current-price">R$ 85,90</h3>
+                            <p class="text-sm mt-1" id="price-change"><span class="text-green-500">↑ 2.4%</span> hoje</p>
+                        </div>
+                        <div class="bg-primary text-white p-3 rounded-full">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-gray-600">Variação semanal: <span class="font-medium" id="weekly-change">+5.2%</span></p>
+                    </div>
+                </div>
+                
+                <!-- Volume Card -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-500">Volume Diário</p>
+                            <h3 class="text-3xl font-bold text-primary mt-2" id="daily-volume">142,540</h3>
+                            <p class="text-sm mt-1">créditos negociados</p>
+                        </div>
+                        <div class="bg-secondary text-white p-3 rounded-full">
+                            <i class="fas fa-exchange-alt text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-gray-600">Média mensal: <span class="font-medium" id="monthly-avg">128,200</span></p>
+                    </div>
+                </div>
+                
+                <!-- Projects Card -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-500">Projetos Ativos</p>
+                            <h3 class="text-3xl font-bold text-primary mt-2" id="active-projects">1,842</h3>
+                            <p class="text-sm mt-1">em operação</p>
+                        </div>
+                        <div class="bg-dark text-white p-3 rounded-full">
+                            <i class="fas fa-tree text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="text-gray-600">Novos este mês: <span class="font-medium" id="new-projects">47</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Price Chart -->
+            <div class="mt-12 bg-gray-50 p-6 rounded-xl shadow-md">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold">Histórico de Preços (Últimos 30 dias)</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 bg-primary text-white rounded-md text-sm">1M</button>
+                        <button class="px-3 py-1 bg-gray-200 rounded-md text-sm">3M</button>
+                        <button class="px-3 py-1 bg-gray-200 rounded-md text-sm">1Y</button>
+                    </div>
+                </div>
+                <div class="h-64 bg-white p-4 rounded-md">
+                    <!-- This would be replaced with a real chart in production -->
+                    <div class="flex items-end h-full space-x-1">
+                        <div class="w-4 bg-primary rounded-t" style="height: 30%"></div>
+                        <div class="w-4 bg-primary rounded-t" style="height: 45%"></div>
+                        <div class="w-4 bg-primary rounded-t" style="height: 60%"></div>
+                        <div class="w-4 bg-primary rounded-t" style="height: 75%"></div>
+                        <div class="w-4 bg-primary rounded-t" style="height: 85%"></div>
+                        <div class="w-4 bg-secondary rounded-t" style="height: 90%"></div>
+                        <div class="w-4 bg-secondary rounded-t" style="height: 95%"></div>
+                        <div class="w-4 bg-secondary rounded-t" style="height: 100%"></div>
+                        <div class="w-4 bg-secondary rounded-t" style="height: 95%"></div>
+                        <div class="w-4 bg-primary rounded-t" style="height: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Earn Section -->
+    <section id="earn" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Como Ganhar Créditos de Carbono</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Existem várias maneiras de gerar créditos de carbono e contribuir para a redução das emissões globais</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="bg-light text-dark p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fas fa-solar-panel text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Energia Renovável</h3>
+                    <p class="text-gray-600">Instale painéis solares, turbinas eólicas ou outros sistemas de energia limpa para gerar créditos.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="bg-light text-dark p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fas fa-tree text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Reflorestamento</h3>
+                    <p class="text-gray-600">Plante árvores ou preserve florestas existentes para sequestrar carbono da atmosfera.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="bg-light text-dark p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fas fa-recycle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gestão de Resíduos</h3>
+                    <p class="text-gray-600">Implemente sistemas de compostagem, reciclagem ou captura de metano em aterros.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="bg-light text-dark p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fas fa-tractor text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Agricultura Sustentável</h3>
+                    <p class="text-gray-600">Adote práticas agrícolas que reduzam emissões e aumentem o sequestro de carbono no solo.</p>
+                </div>
+            </div>
+            
+            <!-- Conversion Section -->
+            <div class="mt-16 bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold mb-6">Conversão de Créditos para Dinheiro</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-600 mb-6">Os créditos de carbono podem ser vendidos no mercado voluntário ou regulado. O valor varia conforme a demanda, tipo de projeto e certificação.</p>
+                        
+                        <div class="bg-light p-4 rounded-lg mb-6">
+                            <h4 class="font-bold mb-2">Exemplo de Cálculo:</h4>
+                            <p>100 créditos × R$ 85,90 = <span class="font-bold text-primary">R$ 8.590,00</span></p>
+                            <p class="text-sm text-gray-500 mt-2">(1 crédito = 1 tonelada de CO₂ equivalente)</p>
+                        </div>
+                        
+                        <p class="text-gray-600">Os pagamentos são geralmente feitos após a verificação e certificação dos créditos por órgãos independentes.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold mb-4">Calculadora de Conversão</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-1">Quantidade de Créditos</label>
+                                <input type="number" id="credit-amount" class="w-full px-4 py-2 border rounded-md" value="100">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-1">Preço por Crédito (R$)</label>
+                                <input type="number" id="credit-price" class="w-full px-4 py-2 border rounded-md" value="85.90">
+                            </div>
+                            <button onclick="calculateConversion()" class="w-full bg-primary text-white py-2 rounded-md hover:bg-secondary transition">
+                                Calcular
+                            </button>
+                            <div class="mt-4 p-4 bg-white rounded-md border">
+                                <p class="text-gray-600">Valor Estimado:</p>
+                                <h3 id="conversion-result" class="text-2xl font-bold text-primary">R$ 8.590,00</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section id="market" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Mercado de Créditos de Carbono</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Conectamos empresas que querem comprar créditos com aquelas que estão vendendo</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Buyers -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <span class="bg-primary text-white p-2 rounded-full mr-3">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                        Empresas Comprando Créditos
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Buyer 1 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <img src="https://logo.clearbit.com/natura.com" alt="Natura" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Natura</h4>
+                                <p class="text-sm text-gray-600">Procurando 5,000 créditos para neutralizar operações</p>
+                            </div>
+                            <div class="ml-auto text-primary font-bold">R$ 86,50</div>
+                        </div>
+                        
+                        <!-- Buyer 2 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <img src="https://logo.clearbit.com/itau.com.br" alt="Itaú" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Itaú</h4>
+                                <p class="text-sm text-gray-600">Necessita 10,000 créditos para meta ESG 2023</p>
+                            </div>
+                            <div class="ml-auto text-primary font-bold">R$ 87,20</div>
+                        </div>
+                        
+                        <!-- Buyer 3 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <img src="https://logo.clearbit.com/vale.com" alt="Vale" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Vale</h4>
+                                <p class="text-sm text-gray-600">Compra de 15,000 créditos para compensação</p>
+                            </div>
+                            <div class="ml-auto text-primary font-bold">R$ 85,00</div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-6 w-full bg-dark text-white py-2 rounded-md hover:bg-primary transition">
+                        Ver Todas as Ofertas (23+)
+                    </button>
+                </div>
+                
+                <!-- Sellers -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <span class="bg-secondary text-white p-2 rounded-full mr-3">
+                            <i class="fas fa-tag"></i>
+                        </span>
+                        Empresas Vendendo Créditos
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Seller 1 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <img src="https://logo.clearbit.com/suzano.com.br" alt="Suzano" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Suzano</h4>
+                                <p class="text-sm text-gray-600">Oferece 8,000 créditos de reflorestamento</p>
+                            </div>
+                            <div class="ml-auto text-primary font-bold">R$ 86,00</div>
+                        </div>
+                        
+                        <!-- Seller 2 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <img src="https://logo.clearbit.com/energisa.com.br" alt="Energisa" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Energisa</h4>
+                                <p class="text-sm text-gray-600">Venda de 3,500 créditos de energia eólica</p>
+                            </div>
+                            <div class="ml-auto text-primary font-bold">R$ 88,50</div>
+                        </div>
+                        
+                        <!-- Seller 3 -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <img src="https://logo.clearbit.com/brf.com.br" alt="BRF" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">BRF</h4>
+                                <p class="text-sm text-gray-600">Disponível 6,200 créditos de gestão de resíduos</p>
+                            </div>
+                            <div class="ml-auto text-primary font-bold">R$ 84,75</div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-6 w-full bg-dark text-white py-2 rounded-md hover:bg-secondary transition">
+                        Ver Todos os Vendedores (18+)
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Marketplace CTA -->
+            <div class="gradient-bg text-white p-8 rounded-xl shadow-lg">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h3 class="text-2xl font-bold mb-4">Participe do Nosso Mercado de Créditos</h3>
+                    <p class="mb-6">Junte-se a centenas de empresas que já estão negociando créditos de carbono em nossa plataforma segura e transparente.</p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-white text-primary font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+                            Quero Vender Créditos
+                        </button>
+                        <button class="bg-dark text-white font-bold px-6 py-3 rounded-full hover:bg-gray-800 transition">
+                            Quero Comprar Créditos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Benefícios para Empresas Limpas</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Além de contribuir para o meio ambiente, empresas sustentáveis ganham vantagens competitivas</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="bg-light text-dark p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-medal text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Reputação Melhorada</h3>
+                    <p class="text-gray-600 text-center">Aumente a confiança dos clientes e o valor da marca associando-se a práticas sustentáveis.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="bg-light text-dark p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-hand-holding-usd text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Incentivos Fiscais</h3>
+                    <p class="text-gray-600 text-center">Aproveite reduções de impostos e financiamentos com melhores condições para empresas verdes.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                    <div class="bg-light text-dark p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-chart-pie text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Novas Receitas</h3>
+                    <p class="text-gray-600 text-center">Gere renda adicional através da venda de créditos de carbono e outros produtos sustentáveis.</p>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-center mb-8">O que as empresas dizem</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Maria Silva" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Maria Silva</h4>
+                                <p class="text-sm text-gray-600">CEO, EcoEnergy Solutions</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">"Desde que começamos a vender nossos créditos de carbono, não apenas aumentamos nossa receita em 15%, mas também atraímos novos investidores interessados em ESG."</p>
+                        <div class="mt-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mendes" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Carlos Mendes</h4>
+                                <p class="text-sm text-gray-600">Diretor de Sustentabilidade, Grupo Verde</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">"A plataforma nos conectou com compradores internacionais que pagam prêmios por nossos créditos de alta qualidade. Foi um divisor de águas para nosso negócio."</p>
+                        <div class="mt-4 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="start" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold mb-4">Como Começar a Ganhar Créditos de Carbono</h2>
+                <p class="mb-8">Siga estes passos simples para iniciar sua jornada no mercado de carbono</p>
+                
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="flex items-start">
+                        <div class="bg-white text-primary font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">1</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Avalie Seu Potencial</h3>
+                            <p>Identifique as atividades em sua operação que podem gerar reduções de emissões ou sequestro de carbono.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex items-start">
+                        <div class="bg-white text-primary font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">2</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Escolha uma Metodologia</h3>
+                            <p>Selecione um padrão de certificação reconhecido (como VCS, Gold Standard ou outros) adequado ao seu projeto.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex items-start">
+                        <div class="bg-white text-primary font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">3</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Documente e Verifique</h3>
+                            <p>Registre seu projeto e submeta-o a uma auditoria independente para validação e verificação das reduções.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="flex items-start">
+                        <div class="bg-white text-primary font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">4</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Registre os Créditos</h3>
+                            <p>Após aprovação, seus créditos serão registrados em um sistema oficial e estarão prontos para negociação.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="flex items-start">
+                        <div class="bg-white text-primary font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">5</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Negocie e Monetize</h3>
+                            <p>Venda seus créditos no mercado voluntário ou regulado através de nossa plataforma.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Pronto para Começar?</h3>
+                    <p class="mb-6">Nossa equipe pode ajudar em cada etapa do processo</p>
+                    <button class="bg-white text-primary font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition pulse">
+                        Fale com um Especialista
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                <h3 class="text-2xl font-bold mb-2">Receba Atualizações do Mercado</h3>
+                <p class="text-gray-600 mb-6">Inscreva-se para receber relatórios semanais sobre preços, tendências e oportunidades</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-2 border rounded-md">
+                    <button class="bg-primary text-white font-bold px-6 py-2 rounded-md hover:bg-secondary transition">
+                        Inscrever
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-leaf text-2xl"></i>
+                        <h3 class="text-xl font-bold">CarbonCredit</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Conectando o mercado de créditos de carbono para um futuro mais sustentável.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Navegação</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#real-time" class="text-gray-300 hover:text-white">Dados em Tempo Real</a></li>
+                        <li><a href="#earn" class="text-gray-300 hover:text-white">Como Ganhar</a></li>
+                        <li><a href="#market" class="text-gray-300 hover:text-white">Mercado</a></li>
+                        <li><a href="#benefits" class="text-gray-300 hover:text-white">Benefícios</a></li>
+                        <li><a href="#start" class="text-gray-300 hover:text-white">Começar</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font
 </html>
