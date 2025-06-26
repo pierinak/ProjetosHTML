@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelto | Make Carbon Count</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body class="bg-white text-zeltoDark">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-leaf text-zeltoGreen text-3xl mr-2"></i>
+                        <span class="text-2xl font-bold text-zeltoGreen">Zelto</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#how-it-works" class="text-gray-600 hover:text-zeltoGreen transition-all">How It Works</a>
+                    <a href="#for-producers" class="text-gray-600 hover:text-zeltoGreen transition-all">For Producers</a>
+                    <a href="#for-buyers" class="text-gray-600 hover:text-zeltoGreen transition-all">For Buyers</a>
+                    <a href="#about" class="text-gray-600 hover:text-zeltoGreen transition-all">About Us</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hidden md:block px-4 py-2 text-zeltoGreen font-medium rounded-full border border-zeltoGreen hover:bg-zeltoGreen hover:text-white transition-all">Log In</a>
+                    <a href="#cta" class="px-4 py-2 bg-zeltoGreen text-white font-medium rounded-full hover:bg-green-600 transition-all">Get Started</a>
+                    <button class="md:hidden focus:outline-none">
+                        <i class="fas fa-bars text-gray-600 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 md:py-32">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">Turn Your <span class="text-zeltoGreen">Impact</span> Into <span class="text-zeltoBlue">Value</span></h1>
+                <p class="text-xl text-gray-600 mb-8">Zelto makes carbon credits simple, transparent, and accessible for everyone. Join the movement to make every ton of CO₂ count.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#cta" class="px-8 py-4 bg-zeltoGreen text-white font-bold rounded-full hover:bg-green-600 transition-all text-center">Offset Your Footprint</a>
+                    <a href="#how-it-works" class="px-8 py-4 bg-white text-zeltoGreen font-bold rounded-full border border-zeltoGreen hover:bg-gray-50 transition-all text-center">Learn How</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative earth-animation">
+                    <img src="https://cdn.pixabay.com/photo/2016/12/11/12/02/earth-1899821_1280.png" alt="Earth" class="w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <div class="bg-zeltoGreen rounded-full p-2 mr-3">
+                                <i class="fas fa-chart-line text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Carbon Credits Traded</p>
+                                <p class="font-bold text-lg">1,245,678 <span class="text-zeltoGreen">tCO₂</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The Climate Challenge We All Face</h2>
+                <div class="w-24 h-1 bg-zeltoGreen mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Every year, human activity releases over 50 billion tons of greenhouse gases into our atmosphere. The consequences are already here - rising temperatures, extreme weather, and ecosystem collapse.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-fire text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Rising Temperatures</h3>
+                    <p class="text-gray-600">Global average temperature has increased by 1.1°C since pre-industrial times, with devastating effects.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-water text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Extreme Weather</h3>
+                    <p class="text-gray-600">More frequent and intense hurricanes, droughts, and floods threaten communities worldwide.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tree text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Biodiversity Loss</h3>
+                    <p class="text-gray-600">1 million species are at risk of extinction due to climate change and habitat destruction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">A <span class="text-zeltoGreen">Simple</span> Solution With <span class="text-zeltoBlue">Big</span> Impact</h2>
+                    <p class="text-xl text-gray-600 mb-8">Zelto connects those who reduce emissions with those who want to offset their carbon footprint. Our transparent marketplace makes carbon credits accessible to everyone.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-zeltoGreen rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Verified Projects</h3>
+                                <p class="text-gray-600">Every credit on our platform comes from certified projects that meet rigorous environmental standards.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-zeltoGreen rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Blockchain Transparency</h3>
+                                <p class="text-gray-600">Our blockchain technology ensures every credit is tracked from creation to retirement.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-zeltoGreen rounded-full p-2 mr-4 mt-1">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Real Impact</h3>
+                                <p class="text-gray-600">See exactly how your purchase supports reforestation, renewable energy, and community projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                        <div class="bg-zeltoGreen p-4 text-white font-bold">
+                            Carbon Credit Lifecycle
+                        </div>
+                        <div class="p-6">
+                            <div class="relative">
+                                <div class="absolute left-5 top-0 h-full w-1 bg-gray-200"></div>
+                                
+                                <div class="mb-8 relative">
+                                    <div class="flex items-center">
+                                        <div class="bg-zeltoGreen rounded-full w-10 h-10 flex items-center justify-center text-white mr-4 z-10">
+                                            1
+                                        </div>
+                                        <div class="bg-gray-100 p-4 rounded-lg flex-1">
+                                            <h4 class="font-bold">Project Development</h4>
+                                            <p class="text-sm text-gray-600">Farmers and organizations implement carbon reduction projects</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-8 relative">
+                                    <div class="flex items-center">
+                                        <div class="bg-zeltoGreen rounded-full w-10 h-10 flex items-center justify-center text-white mr-4 z-10">
+                                            2
+                                        </div>
+                                        <div class="bg-gray-100 p-4 rounded-lg flex-1">
+                                            <h4 class="font-bold">Verification</h4>
+                                            <p class="text-sm text-gray-600">Independent auditors verify carbon reductions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-8 relative">
+                                    <div class="flex items-center">
+                                        <div class="bg-zeltoGreen rounded-full w-10 h-10 flex items-center justify-center text-white mr-4 z-10">
+                                            3
+                                        </div>
+                                        <div class="bg-gray-100 p-4 rounded-lg flex-1">
+                                            <h4 class="font-bold">Tokenization</h4>
+                                            <p class="text-sm text-gray-600">Reductions are converted to digital carbon credits</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative">
+                                    <div class="flex items-center">
+                                        <div class="bg-zeltoGreen rounded-full w-10 h-10 flex items-center justify-center text-white mr-4 z-10">
+                                            4
+                                        </div>
+                                        <div class="bg-gray-100 p-4 rounded-lg flex-1">
+                                            <h4 class="font-bold">Purchase & Retirement</h4>
+                                            <p class="text-sm text-gray-600">Buyers offset their footprint by retiring credits</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Producers Section -->
+    <section id="for-producers" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">For <span class="text-zeltoGreen">Carbon Producers</span></h2>
+                <div class="w-24 h-1 bg-zeltoGreen mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Farmers, foresters, and renewable energy projects can monetize their carbon reductions through our platform.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Farmers" class="rounded-xl shadow-lg w-full">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-zeltoGreen rounded-full p-3 mr-4 mt-1">
+                                <i class="fas fa-dollar-sign text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">New Revenue Stream</h3>
+                                <p class="text-gray-600">Earn income from carbon credits while continuing your regular operations. Our platform connects you directly with buyers worldwide.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-zeltoGreen rounded-full p-3 mr-4 mt-1">
+                                <i class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Simplified Process</h3>
+                                <p class="text-gray-600">We handle the complex verification and certification process, making it easy for you to participate in carbon markets.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-zeltoGreen rounded-full p-3 mr-4 mt-1">
+                                <i class="fas fa-chart-line text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Fair Pricing</h3>
+                                <p class="text-gray-600">Our transparent marketplace ensures you receive fair value for your environmental contributions.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="inline-block px-6 py-3 bg-zeltoGreen text-white font-medium rounded-full hover:bg-green-600 transition-all">Learn About Selling Credits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Buyers Section -->
+    <section id="for-buyers" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">For <span class="text-zeltoBlue">Carbon Buyers</span></h2>
+                <div class="w-24 h-1 bg-zeltoBlue mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Individuals and businesses can easily offset their carbon footprint through our verified projects.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 order-2 md:order-1 md:pr-12">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-zeltoBlue rounded-full p-3 mr-4 mt-1">
+                                <i class="fas fa-search text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Transparent Selection</h3>
+                                <p class="text-gray-600">Choose from a variety of project types and locations, with full details about environmental and social impact.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-zeltoBlue rounded-full p-3 mr-4 mt-1">
+                                <i class="fas fa-calculator text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Easy Calculation</h3>
+                                <p class="text-gray-600">Use our carbon calculator to determine your footprint and the credits needed to offset it.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-zeltoBlue rounded-full p-3 mr-4 mt-1">
+                                <i class="fas fa-certificate text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Verified Impact</h3>
+                                <p class="text-gray-600">Receive a certificate for every credit retired, with blockchain proof of your environmental contribution.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#cta" class="inline-block px-6 py-3 bg-zeltoBlue text-white font-medium rounded-full hover:bg-blue-600 transition-all">Offset Your Footprint Now</a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 mb-12 md:mb-0 order-1 md:order-2">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose <span class="text-zeltoGreen">Zelto</span></h2>
+                <div class="w-24 h-1 bg-zeltoGreen mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We're building the most trusted carbon credit marketplace with technology and transparency at its core.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="bg-zeltoGreen bg-opacity-10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-fingerprint text-zeltoGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Blockchain Verified</h3>
+                    <p class="text-gray-600">Every credit is tokenized on blockchain, ensuring authenticity and preventing double counting.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="bg-zeltoGreen bg-opacity-10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-globe-americas text-zeltoGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Global Projects</h3>
+                    <p class="text-gray-600">Support diverse projects from rainforest conservation to clean cookstoves in developing nations.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="bg-zeltoGreen bg-opacity-10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-zeltoGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">User-Friendly Platform</h3>
+                    <p class="text-gray-600">Our intuitive interface makes buying and selling carbon credits simple for everyone.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="bg-zeltoGreen bg-opacity-10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-hand-holding-usd text-zeltoGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fair Pricing</h3>
+                    <p class="text-gray-600">Market-driven pricing ensures fair value for both producers and buyers of carbon credits.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="bg-zeltoGreen bg-opacity-10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-zeltoGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community Impact</h3>
+                    <p class="text-gray-600">Many projects create additional benefits like jobs, education, and improved health in local communities.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition-all">
+                    <div class="bg-zeltoGreen bg-opacity-10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-lock text-zeltoGreen text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Secure Transactions</h3>
+                    <p class="text-gray-600">Enterprise-grade security protects all transactions and personal information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted By <span class="text-zeltoGreen">Businesses</span> & <span class="text-zeltoBlue">Individuals</span></h2>
+                <div class="w-24 h-1 bg-zeltoGreen mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Zelto made it incredibly easy for our company to achieve carbon neutrality. The platform's transparency gave us confidence in our purchases."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">CEO, GreenTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"As a small farmer, Zelto has provided a significant new income stream from our reforestation efforts. The process was much simpler than I expected."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Miguel R." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Miguel Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Coffee Farmer, Costa Rica</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"I offset my family's carbon footprint through Zelto. The ability to choose specific projects and see their impact makes me feel truly connected to the solution."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Priya Kumar</h4>
+                            <p class="text-sm text-gray-500">Environmental Advocate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-20 bg-zeltoGreen text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/3 mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Make Your <span class="text-zeltoDark">Carbon Count</span>?</h2>
+                    <p class="text-xl opacity-90 max-w-2xl">Join thousands of individuals and businesses taking climate action through Zelto's transparent carbon marketplace.</p>
+                </div>
+                <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row">
+                    <a href="#" class="px-8 py-4 bg-white text-zeltoGreen font-bold rounded-full hover:bg-gray-100 transition-all text-center">Sign Up Free</a>
+                    <a href="#" class="px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:bg-opacity-10 transition-all text-center">Calculate Footprint</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zeltoDark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-leaf text-zeltoGreen text-3xl mr-2"></i>
+                        <span class="text-2xl font-bold text-zeltoGreen">Zelto</span>
+                    </div>
+                    <p class="text-gray-400">Making carbon count through transparency, technology, and trust.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Carbon Calculator</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Project Directory</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">API Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-zeltoGreen transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-zeltoGreen transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-zeltoGreen transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-zeltoGreen transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">hello@zelto.com</p>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Zelto. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle (would be expanded in real implementation)
+        document.querySelector('nav button').addEventListener('click', function() {
+            const menu = document.querySelector('.md\\:flex');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            menu.classList.toggle('flex-col');
+            menu.classList.toggle('absolute');
+            menu.classList.toggle('top-16');
+            menu.classList.toggle('left-0');
+            menu.classList.toggle('right-0');
+            menu.classList.toggle('bg-white');
+            menu.classList.toggle('p-4');
+            menu.classList.toggle('shadow-md');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
